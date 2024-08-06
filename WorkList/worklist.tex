@@ -1,0 +1,48 @@
+% ------------------------------------------------------------------------
+% Ph.D. Report ++ Oleg, 2005 ************
+% ------------------------------------------------------------------------
+
+\documentclass[12pt]{report}
+
+\usepackage[centertags]{amsmath}
+\usepackage{amsfonts, amssymb, amsthm}
+
+%\usepackage{psfig}
+\usepackage{capt-of}
+\usepackage[cp1251]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[ukrainian]{babel}
+
+% A4 210x297 mm
+\oddsidemargin =-5mm % 2.54cm + 5mm = 30.4mm
+\topmargin     =-5mm % 2.54 - 5mm = 20.4mm
+\textwidth     =170mm % 170 + 30.4 -> right offset = 10 mm
+\textheight    =245mm % 245 + 5(colont.) + 20.4 -> bottom offset = 20 mm
+
+\tolerance = 300    % м_ра розр_дженост_ строки
+\hyphenpenalty = 300% частота перенос_в
+\parindent = 12.5mm % абзацний в_дступ
+
+\newcounter{Fourth}
+\setcounter{Fourth}{4}
+\newcounter{Fifth}
+\setcounter{Fifth}{5}
+\newcounter{Sixth}
+\setcounter{Sixth}{6}
+\newcounter{Eleventh}
+\setcounter{Eleventh}{11}
+
+\begin{document} \thispagestyle{empty} \fontsize{12}{16}\selectfont
+
+\nocite{Mytnyk-Bidyuk,Bidyuk-Mytnyk,Bidyuk-Lytvinenko-Mytnyk,Mytnyk-BBR-2006,Mytnyk-KISA-07,Mytnyk-KISA-07-ENG,Mytnyk-IBSS-07,
+Mytnyk-diss,Pankratova-Mytnyk-Salata-conf,Mytnyk-5conf,Bidyuk-Baklan-Mytnyk-Lytvinenko-conf,Mytnyk-6conf,Mytnyk-ISDMIT-2005,
+Mytnyk-DSMSI-2005,Mytnyk-Kravchuk-conf-2006,Mytnyk-IAI-conf-2006,Mytnyk-DSMSI-2007,Mytnyk-ICIM-2008}
+
+\section*{СПИСОК ПУБЛІКАЦІЙ ЗА ТЕМОЮ ДИСЕРТАЦІЇ}
+
+\bibliographystyle{../Shared.TEX/gost71u_m}
+\bibliography{../Shared.TEX/biblio}
+
+
+
+\end{document}

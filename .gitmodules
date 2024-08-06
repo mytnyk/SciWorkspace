@@ -1,0 +1,16 @@
+[submodule "Shared.TEX"]
+	path = Shared.TEX
+	url = https://github.com/mytnyk/Shared.TEX.git
+	branch = master
+[submodule "Dissertation"]
+	path = Dissertation
+	url = https://github.com/mytnyk/Dissertation.git
+	branch = master
+[submodule "Diss.-auto"]
+	path = Diss.-auto
+	url = https://github.com/mytnyk/Diss.-auto.git
+	branch = master
+[submodule "_data_"]
+	path = _data_
+	url = https://github.com/mytnyk/_data_.git
+	branch = master

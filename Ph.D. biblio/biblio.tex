@@ -1,0 +1,56 @@
+%% РАСПЕЧАТКА БИБЛИОГРАФИЧЕСКОЙ БАЗЫ
+\documentclass[12pt]{article}
+\usepackage[cp1251]{inputenc}
+\usepackage[ukrainian]{babel}
+\usepackage{color,url}
+\usepackage[unicode,colorlinks=true,linkcolor=black,citecolor=red,urlcolor=blue]{hyperref}
+
+
+\oddsidemargin =4.6mm % 2.54cm + 4.6mm = 30mm
+\topmargin     =-5.4mm % 2.54cm - 5.4mm = 20mm
+\textwidth     =170mm % 170mm + 30mm -> right offset = 10mm
+\textheight    =244mm % 244mm + (13head) + 20mm -> bottom offset = 20mm
+
+\tolerance = 300 %
+\hyphenpenalty = 300
+
+\newcounter{Fourth}
+\setcounter{Fourth}{4}
+\newcounter{Fifth}
+\setcounter{Fifth}{5}
+\newcounter{Sixth}
+\setcounter{Sixth}{6}
+\newcounter{Eleventh}
+\setcounter{Eleventh}{11}
+
+\fontfamily{cmr}%
+
+%% Печать метки рядом с каждым пунктом библиографии
+%\let\bibitemold=\bibitem
+%\def\bibitem#1{\bibitemold{#1}{\tt #1}\\}
+
+%% Команды форматирования элементов библиографии
+%\def\BibAuthor#1{\emph{#1}}
+%\def\BibTitle#1{\\{\bf #1}}
+%\def\BibUrl#1{\\{\small\tt\def~{\char126} http://#1}}
+\def\BibUrl#1{\\{\small\tt \url{#1}}}
+%\def\BibUrl#1{\par{\small #1}\par}
+%\def\BibAnnote#1{\par{\small #1}\par}   %% для печати аннотаций
+%\def\BibAnnote#1{}                     %% для удаления аннотаций
+%\def\BibSection#1#2{\section{#2}}
+
+%\pdfpagewidth  =210mm %
+%\pdfpageheight =297mm %
+%\pdfinfo { /Author(Oleg Mytnyk) }
+
+\begin{document}
+\nocite{*}                              %% включить все записи базы
+
+
+\renewcommand{\refname}{БІБЛІОГРАФІЧНА БАЗА}
+
+%% Генерация библиографии
+\bibliographystyle{../Shared.TEX/gost71u_m}
+\bibliography{../Shared.TEX/biblio}
+
+\end{document}

@@ -1,0 +1,78 @@
+
+% Design the section style:
+% set dots after sections
+\def\thesection       {\arabic{section}.}
+\def\thesubsection    {\thesection\arabic{subsection}.}
+\def\thesubsubsection {\thesubsection\arabic{subsubsection}.}
+
+% look at the p.275 latex book
+\def\section{\@startsection {section}{1}{\parindent}{3.5ex plus 1ex minus
+    .2ex}{2.3ex plus.2ex}{\reset@font\large\bf}}
+\def\subsection{\@startsection{subsection}{2}{\parindent}{3.25ex plus 1ex
+     minus .2ex}{1.5ex plus.2ex}{\reset@font\normalsize\bf}}
+
+% Design the running heads:
+%\cfoot{}\lhead{}\chead{}\rhead{- \thepage\ -}
+
+% Design the caption style: e.g. for figures (make dot instead of colon):
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{#1. #2}%
+  \ifdim \wd\@tempboxa >\hsize
+    #1. #2\par
+  \else
+    \global \@minipagefalse
+    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+
+
+
+% Handling tables and captions:
+\long\def\@maketablecaption#1{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{#1}%
+  \ifdim \wd\@tempboxa >\hsize
+    #1\par
+  \else
+    \global \@minipagefalse
+    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+
+\long\def\@tablecaption#1[#2]#3{%
+  \par
+  \addcontentsline{\csname ext@#1\endcsname}{#1}%
+    {\protect\numberline{\csname the#1\endcsname}{\ignorespaces #2}}%
+  \begingroup
+    \@parboxrestore
+    \if@minipage
+      \@setminipage
+    \fi
+    \normalsize
+    \@maketablecaption{\rightline{\csname fnum@#1\endcsname}}\par\centerline{\ignorespaces #3}\vspace{5pt}\par
+  \endgroup}
+
+\def\tablecaption{%
+   \ifx\@captype\@undefined
+     \@latex@error{\noexpand\caption outside float}\@ehd
+     \expandafter\@gobble
+   \else
+     \refstepcounter\@captype
+     \expandafter\@firstofone
+   \fi
+   {\@dblarg{\@tablecaption\@captype}}%
+}
+\def\fps@table{htbp}
+\def\ftype@table{2}
+\def\fnum@table{\tablename~\thetable}
+\renewenvironment{table}
+               {\setlength\abovecaptionskip{0\p@}%
+                \setlength\belowcaptionskip{5\p@}%
+                \@float{table}\begin{center}}
+               {\end{center}\end@float}
+\renewenvironment{table*}
+               {\setlength\abovecaptionskip{0\p@}%
+                \setlength\belowcaptionskip{5\p@}%
+                \@dblfloat{table}\begin{center}}
+               {\end{center}\end@dblfloat}
