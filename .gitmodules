@@ -14,3 +14,7 @@
 	path = _data_
 	url = https://github.com/mytnyk/_data_.git
 	branch = master
+[submodule "PRIAMUS"]
+	path = PRIAMUS
+	url = https://github.com/mytnyk/PRIAMUS.git
+	branch = master
