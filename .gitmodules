@@ -18,3 +18,7 @@
 	path = PRIAMUS
 	url = https://github.com/mytnyk/PRIAMUS.git
 	branch = master
+[submodule "SHMO"]
+	path = SHMO
+	url = https://github.com/mytnyk/SHMO.git
+	branch = master
